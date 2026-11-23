@@ -1,6 +1,8 @@
 import Entities.DarkMage;
+import Entities.Enemies;
 import Entities.ForgeExecutioner;
 import Entities.Monk;
+import Entities.Personagem;
 import Entities.Samurai;
 import Entities.Tank;
 import Services.BattleService;
@@ -25,7 +27,19 @@ public class Program {
         battleService.enemies.add(darkMage);
         battleService.enemies.add(executioner);
 
-        System.out.println("=== STARTING BATTLE ===");
+        // Exibindo os dados iniciais dos Heróis
+        System.out.println("=== HEROES ===");
+        for (Personagem hero : battleService.heroes) {
+            System.out.println(hero);
+        }
+
+        // Exibindo os dados iniciais dos Inimigos
+        System.out.println("\n=== ENEMIES ===");
+        for (Enemies enemy : battleService.enemies) {
+            System.out.println(enemy);
+        }
+
+        System.out.println("\n=== STARTING BATTLE ===");
         battleService.startBattle();
     }
 }
